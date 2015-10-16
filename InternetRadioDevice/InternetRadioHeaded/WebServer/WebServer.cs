@@ -208,6 +208,7 @@ namespace InternetRadio
                                 case "track":
                                     if (parameters.ContainsKey("trackName") && !string.IsNullOrWhiteSpace(parameters["trackName"]))
                                         this.radioManager.RadioPresetManager.PlayTrack(parameters["trackName"]);
+                                    while (this.radioManager.PlayState != PlaybackState.Playing) ;
                                     break;
                             }
                         }
